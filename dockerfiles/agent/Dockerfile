@@ -5,4 +5,4 @@ RUN apk -U add git openssh
 COPY files/ssh/config /opt/gocd/.ssh/config
 COPY files/install-ssh-certs-before /install-ssh-certs-before
 
-ENTRYPOINT ["/install-ssh-certs-before", "/init.sh"]
+ENTRYPOINT ["/install-ssh-certs-before", "/init"]
