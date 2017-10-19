@@ -22,6 +22,11 @@ catalog:
       options:
         - "true"
         - "false"
+    - variable: "DOCKER_VERSION"
+      description: "Specify the version of Docker to use to run the builds"
+      label: "Docker version"
+      required: true
+      default: "17.05"
     - variable: "GOCD_AGENT_SCALE"
       description: "Number of GoCD agent"
       label: "GoCD Agents"
