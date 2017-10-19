@@ -125,12 +125,12 @@ catalog:
       description: "SSH private key used with git clone. Needed only if expecting to clone using ssh"
       label: "SSH private key"
       required: false
-      type: "string"
+      type: "multiline"
     - variable: "SSH_KEY_PUB"
       description: "SSH public key. This key must be added to your repository server in order to allow git clones to work. Needed only if expecting to clone using ssh"
       label: "SSH public key"
       required: false
-      type: "string"
+      type: "multiline"
       
 services:
   gocd-agent:
