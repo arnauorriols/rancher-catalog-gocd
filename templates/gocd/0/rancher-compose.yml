@@ -27,6 +27,7 @@ catalog:
       label: "Docker version"
       required: true
       default: "17.05"
+      type: "string"
     - variable: "GOCD_AGENT_SCALE"
       description: "Number of GoCD agent"
       label: "GoCD Agents"
