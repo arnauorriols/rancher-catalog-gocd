@@ -3,7 +3,7 @@ services:
   {{- if eq .Values.DEPLOY_SERVER "true"}}
   gocd-server:
     tty: true
-    image: arnauorriols/gocd-server:17.3.0
+    image: arnauorriols/gocd-server:v17.10.0
     volumes:
     {{- if eq (printf "%.1s" .Values.VOLUME_DRIVER_SERVER) "/" }}
       - ${VOLUME_DRIVER_SERVER}:/data
@@ -63,7 +63,7 @@ services:
   {{- if eq .Values.DEPLOY_AGENT "true"}}
   gocd-agent:
     tty: true
-    image: arnauorriols/gocd-agent-alpine-3.5:17.10.0
+    image: arnauorriols/gocd-agent-alpine-3.5:v17.10.0
     volumes:
     {{- if eq (printf "%.1s" .Values.VOLUME_DRIVER_AGENT) "/"}}
       - ${VOLUME_DRIVER_AGENT}:/data
