@@ -3,7 +3,7 @@ services:
   {{- if eq .Values.DEPLOY_SERVER "true"}}
   gocd-server:
     tty: true
-    image: arnauorriols/gocd-server:v17.10.0
+    image: arnauorriols/alpine-gocd-server:17.3.0-1
     volumes:
     {{- if eq (printf "%.1s" .Values.VOLUME_DRIVER_SERVER) "/" }}
       - ${VOLUME_DRIVER_SERVER}:/data
@@ -45,7 +45,7 @@ services:
       io.rancher.container.hostname_override: container_name
     {{- if eq .Values.DEPLOY_LB "true"}}
   lb:
-    image: rancher/lb-service-haproxy:v0.7.14
+    image: rancher/lb-service-haproxy:v0.6.4
       {{- if (.Values.PUBLISH_PORT)}}
     ports:
       - ${PUBLISH_PORT}:8153/tcp
@@ -63,7 +63,7 @@ services:
   {{- if eq .Values.DEPLOY_AGENT "true"}}
   gocd-agent:
     tty: true
-    image: arnauorriols/gocd-agent-alpine-3.5:v17.10.0
+    image: arnauorriols/alpine-gocd-agent:17.3.0-1
     volumes:
     {{- if eq (printf "%.1s" .Values.VOLUME_DRIVER_AGENT) "/"}}
       - ${VOLUME_DRIVER_AGENT}:/data

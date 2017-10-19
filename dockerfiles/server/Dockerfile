@@ -1,1 +1,1 @@
-FROM gocd/gocd-server:v17.10.0
+FROM webcenter/alpine-gocd-server:17.3.0-1

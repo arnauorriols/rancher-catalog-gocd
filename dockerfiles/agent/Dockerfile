@@ -1,8 +1,8 @@
-FROM gocd/gocd-agent-alpine-3.5:v17.10.0
+FROM webcenter/alpine-gocd-agent:17.3.0-1
 
 RUN apk -U add git openssh
 
-USER gocd:gocd
 COPY files/ssh/config /opt/gocd/.ssh/config
+COPY files/install-ssh-certs-before /install-ssh-certs-before
 
-ENTRYPOINT ["cat $SSH_KEY > /opt/gocd/.ssh/id_rsa && cat $SSH_KEY_PUB > /opt/gocd/.ssh/id_rsa.pub && /docker-entrypoint.sh"]
+ENTRYPOINT ["/install-ssh-certs-before", "/init.sh"]

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+cat $SSH_KEY > /opt/gocd/.ssh/id_rsa
+cat $SSH_KEY_PUB > /opt/gocd/.ssh/id_rsa.pub
+chown -R gocd:gocd /opt/gocd/.ssh
+chmod -R 600 /opt/gocd/.ssh
+$@
