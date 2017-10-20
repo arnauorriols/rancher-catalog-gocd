@@ -104,6 +104,7 @@ services:
       io.rancher.container.hostname_override: container_name
     image: index.docker.io/docker:${DOCKER_VERSION}-dind
     network_mode: bridge
+    command: ["--storage-driver=overlay2"]
     volumes:
     {{- if eq (printf "%.1s" .Values.VOLUME_DRIVER_AGENT) "/"}}
       - ${VOLUME_DRIVER_AGENT}:/data
