@@ -37,6 +37,7 @@ services:
       - GOCD_PLUGIN_gitlab-auth=https://github.com/gocd-contrib/gocd-oauth-login/releases/download/v2.3/gitlab-oauth-login-2.3.jar
       - GOCD_PLUGIN_google-auth=https://github.com/gocd-contrib/gocd-oauth-login/releases/download/v2.3/google-oauth-login-2.3.jar
       - GOCD_PLUGIN_github-auth=https://github.com/gocd-contrib/gocd-oauth-login/releases/download/v2.3/github-oauth-login-2.3.jar
+      - GOCD_PLUGIN_yaml-config-plugin=https://github.com/tomzo/gocd-yaml-config-plugin/releases/download/0.5.0/yaml-config-plugin-0.5.0.jar
       {{- end}}
     {{- if and (ne .Values.DEPLOY_LB "true") (.Values.PUBLISH_PORT)}}
     ports:
